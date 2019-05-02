@@ -1,0 +1,15 @@
+<% if flash[:error] %>
+<% flash[:error].each do |e| %>
+<p><%= e %></p>
+<%end%>
+<%end%>
+
+<%= form_for @dragon do |f|%>
+<%=f.label :name %>
+<%=f.text_field :name %>
+<%=f.label :age %>
+<%=f.text_field :age %>
+<%=f.label 'User' %>
+<%=f.collection_select :user_id, User.all, :id, :name, {:prompt => "Please select your user"} %>
+<%=f.submit%>
+<%end%>

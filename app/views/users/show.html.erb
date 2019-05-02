@@ -1,0 +1,11 @@
+<h1><%= @user.name%></h1>
+
+Dragons: <br>
+<ul>
+<% @dragons.each do |dragon|%>
+<li><%= link_to dragon.name, dragon_path(dragon)%></li>
+<%end%>
+</ul>
+
+<br><br>
+<%=button_to "Delete User", user_path(@user), method: :delete%>
