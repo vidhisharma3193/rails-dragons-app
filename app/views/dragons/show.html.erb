@@ -1,0 +1,11 @@
+<h1><%= @dragon.name %></h1>
+
+Age: <%= @dragon.age %><br><br>
+
+<% if @user %>
+Master: <%= link_to @user.name, user_path(@user) %><br><br>
+<% end %>
+
+<%= link_to "Edit dragon", edit_dragon_path(@dragon) %><br><br>
+
+<%= button_to "Delete dragon", dragon_path(@dragon), method: :delete %><br><br>

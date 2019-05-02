@@ -1,0 +1,23 @@
+<h1>Users</h1>
+
+<ul>
+<% @users.each do |user| %>
+  <li><%= link_to user.name, user_path(user) %>
+    <% if user.dragons.length > 0 %>
+      <br>Dragons:
+      <ul>
+        <% user.dragons.each do |dragon| %>
+          <li><%= link_to dragon.name, dragon_path(dragon) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  
+  </li>
+
+<%end%>
+</ul>
+
+
+<%= link_to "Create user", new_user_path %><br><br>
+
+<%= link_to "Create dragon", new_dragon_path %><br><br>

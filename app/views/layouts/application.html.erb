@@ -10,5 +10,9 @@
 
   <body>
     <%= yield %>
+
+    <% if !@set_on_homepage %>
+      <br><%= link_to "HomePage", home_path %>
+    <% end %>
   </body>
 </html>
