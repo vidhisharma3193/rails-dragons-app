@@ -1,0 +1,7 @@
+<h1><%=  @user.name %></h1>
+<p>Dragons:</p>
+<% @user.dragons.each do |dragon| %>
+<li>
+    <%= link_to  dragon.name, dragon_path(dragon) %> |  age: <%= dragon.age%>
+</li>
+<%end%>
